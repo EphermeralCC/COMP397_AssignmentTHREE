@@ -8,7 +8,7 @@ module objects {
             super("ocean");
             
            this._speed.x = 5; //ocean speed
-           this._reset(-600);
+           this._reset(0);
         }
         
         // PRIVATE METHODS ++++++++++++++++++++++++++++
@@ -18,7 +18,7 @@ module objects {
             
             console.log(this.x);
             if(this.x >= value) {
-                this._reset(-1100);
+                this._reset(-1160);
             }
         }
         
