@@ -8,17 +8,21 @@ var currentScene;
 var scene;
 // Game Scenes
 var menu;
+var instruction;
 var play;
 var end;
 var assetData = [
     // Add your Assets here
     { id: "StartButton", src: "../../Assets/images/StartButton.png" },
+    { id: "InstructionButton", src: "../../Assets/images/InstructionButton.png" },
     { id: "RestartButton", src: "../../Assets/images/RestartButton.png" },
     { id: "BackButton", src: "../../Assets/images/BackButton.png" },
     { id: "mountain", src: "../../Assets/images/mountains.png" },
     { id: "dragon", src: "../../Assets/images/dragon.png" },
     { id: "fire", src: "../../Assets/images/fire.png" },
     { id: "fireball", src: "../../Assets/images/fireball.png" },
+    { id: "background", src: "../../Assets/images/background.png" },
+    { id: "instruction", src: "../../Assets/images/instruction.png" }
 ];
 function preload() {
     assets = new createjs.LoadQueue();
@@ -73,6 +77,13 @@ function changeScene() {
             menu = new scenes.Menu();
             currentScene = menu;
             console.log("Starting MENU Scene");
+            break;
+        case config.Scene.INSTRUCTION:
+            // show the INSTRUCTION scene
+            stage.removeAllChildren();
+            instruction = new scenes.Instruction();
+            currentScene = instruction;
+            console.log("Starting INSTRUCTION Scene");
             break;
         case config.Scene.PLAY:
             // show the PLAY scene

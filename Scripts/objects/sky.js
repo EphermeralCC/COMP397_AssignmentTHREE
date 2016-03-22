@@ -12,25 +12,25 @@ var objects;
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
         function Sky() {
             _super.call(this, "mountain");
-            this._speed.x = 5; //ocean speed
+            this._speed.x = 5; //sky speed
             this._reset(0);
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++
         Sky.prototype._checkBounds = function (value) {
-            // check to see if the top of the ocean 
+            // check to see if the top of the sky 
             // is met the top of the scene
             console.log(this.x);
             if (this.x >= value) {
                 this._reset(-1200);
             }
         };
-        // reset the ocean offscreen
+        // reset the sky offscreen
         Sky.prototype._reset = function (value) {
             this.x = value;
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
         Sky.prototype.update = function () {
-            // scroll the ocean 5 px per frame
+            // scroll the sky 5 px per frame
             this.x += this._speed.x;
             this._checkBounds(0);
         };
