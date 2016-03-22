@@ -6,38 +6,38 @@ var __extends = (this && this.__extends) || function (d, b) {
 var objects;
 (function (objects) {
     // ISLAND CLASS ++++++++++++++++++++++++++++++++++++
-    var Island = (function (_super) {
-        __extends(Island, _super);
+    var Fire = (function (_super) {
+        __extends(Fire, _super);
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
-        function Island() {
-            _super.call(this, "island");
-            this._speed.x = 5; //island speed
+        function Fire() {
+            _super.call(this, "fire");
+            this._speed.x = 5; //fire speed
             this._reset(this._leftBounds - 100);
-            this.name = "island";
+            this.name = "fire";
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++
-        Island.prototype._checkBounds = function (value) {
-            // check to see if the top of the island 
+        Fire.prototype._checkBounds = function (value) {
+            // check to see if the top of the fire 
             // is outside the viewport         
             if (this.x >= value) {
                 this._reset(this._leftBounds - 100);
             }
         };
-        // reset the ocean offscreen
-        Island.prototype._reset = function (value) {
+        // reset the Sky offscreen
+        Fire.prototype._reset = function (value) {
             this.x = value;
             this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
-        Island.prototype.update = function () {
-            // scroll the island 5 px per frame
+        Fire.prototype.update = function () {
+            // scroll the fire 5 px per frame
             this.x += this._speed.x;
             this._checkBounds(this._rightBounds + 100);
         };
-        return Island;
+        return Fire;
     }(objects.GameObject));
-    objects.Island = Island;
+    objects.Fire = Fire;
 })(objects || (objects = {}));
 
-//# sourceMappingURL=island.js.map
+//# sourceMappingURL=fire.js.map

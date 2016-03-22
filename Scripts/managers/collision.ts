@@ -30,13 +30,13 @@ module managers {
             if(this.distance(startPoint, endPoint) < minimumDistance) {
                 
                 // check if it's an island hit
-                if(object.name === "island") {
-                    console.log("island hit!");
+                if(object.name === "fire") {
+                    console.log("fire collected!");
                 }
                 
                 // check if it's a cloud hit
-                if(object.name === "cloud") {
-                    console.log("cloud hit!");
+                if(object.name === "fireball") {
+                    console.log("fireball hit!");
                 }
             }
         }

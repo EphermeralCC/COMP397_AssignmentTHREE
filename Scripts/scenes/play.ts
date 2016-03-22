@@ -2,10 +2,10 @@
 module scenes {
     export class Play extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        private _ocean: objects.Ocean;
-        private _island: objects.Island;
-        private _clouds: objects.Cloud[];
-        private _cloudCount:number;
+        private _sky: objects.Sky;
+        private _fire: objects.Fire;
+        private _fireball: objects.Fireball[];
+        private _fireballCount:number;
         private _player: objects.Player;
         private _collision: managers.Collision;
         
@@ -20,27 +20,27 @@ module scenes {
         // Start Method
         public start(): void {
             // Set Cloud Count
-            this._cloudCount = 3;
+            this._fireballCount = 8;
             
             // Instantiate Cloud array
-            this._clouds = new Array<objects.Cloud>();
+            this._fireball = new Array<objects.Fireball>();
                 
             // added ocean to the scene
-            this._ocean = new objects.Ocean();
-            this.addChild(this._ocean);
+            this._sky = new objects.Sky();
+            this.addChild(this._sky);
 
             // added island to the scene
-            this._island = new objects.Island();
-            this.addChild(this._island);
+            this._fire = new objects.Fire();
+            this.addChild(this._fire);
 
             // added player to the scene
             this._player = new objects.Player();
             this.addChild(this._player);
             
             //added clouds to the scene
-            for(var cloud:number = 0; cloud < this._cloudCount; cloud++) {
-                this._clouds[cloud] = new objects.Cloud();
-               this.addChild(this._clouds[cloud]);
+            for(var ball:number = 0; ball < this._fireballCount; ball++) {
+                this._fireball[ball] = new objects.Fireball();
+               this.addChild(this._fireball[ball]);
             }
             
             // added collision manager to the scene
@@ -52,17 +52,17 @@ module scenes {
 
         // PLAY Scene updates here
         public update(): void {
-            this._ocean.update();
-            this._island.update();
+            this._sky.update();
+            this._fire.update();
            
             this._player.update();
            
-            this._clouds.forEach(cloud => {
-                cloud.update();
-                this._collision.check(cloud);
+            this._fireball.forEach(ball => {
+                ball.update();
+                this._collision.check(ball);
             });
             
-            this._collision.check(this._island);
+            this._collision.check(this._fire);
         }
         
         

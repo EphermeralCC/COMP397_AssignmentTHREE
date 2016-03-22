@@ -12,7 +12,7 @@ module objects {
         public width: number;
         public height: number;
         constructor() {
-            super(assets.getResult("plane"));
+            super(assets.getResult("dragon"));
 
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
@@ -22,9 +22,6 @@ module objects {
             
             this._topBounds = this.height * 0.5;
             this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
-
-            // this._leftBounds = this.width * 0.5;
-            // this._rightBounds = config.Screen.WIDTH - (this.width * 0.5);
 
             this.x = 600;
         }
@@ -39,16 +36,6 @@ module objects {
                 this.y = this._bottomBounds;
             }
         }
-        // private _checkBounds(): void {
-        //     if (this.x < this._leftBounds) {
-        //         this.x = this._leftBounds;
-        //     }
-
-        //     if (this.x > this._rightBounds) {
-        //         this.x = this._rightBounds;
-        //     }
-        // }
-
 
         // PUBLIC METHODS
         public update(): void {

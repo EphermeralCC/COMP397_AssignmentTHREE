@@ -9,15 +9,13 @@ var objects;
     var Player = (function (_super) {
         __extends(Player, _super);
         function Player() {
-            _super.call(this, assets.getResult("plane"));
+            _super.call(this, assets.getResult("dragon"));
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.regX = this.width * 0.5;
             this.regY = this.height * 0.5;
             this._topBounds = this.height * 0.5;
             this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
-            // this._leftBounds = this.width * 0.5;
-            // this._rightBounds = config.Screen.WIDTH - (this.width * 0.5);
             this.x = 600;
         }
         // PRIVATE METHODS
@@ -29,14 +27,6 @@ var objects;
                 this.y = this._bottomBounds;
             }
         };
-        // private _checkBounds(): void {
-        //     if (this.x < this._leftBounds) {
-        //         this.x = this._leftBounds;
-        //     }
-        //     if (this.x > this._rightBounds) {
-        //         this.x = this._rightBounds;
-        //     }
-        // }
         // PUBLIC METHODS
         Player.prototype.update = function () {
             this.y = stage.mouseY;

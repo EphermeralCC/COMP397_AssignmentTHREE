@@ -1,28 +1,28 @@
 module objects {
     // OCEAN CLASS ++++++++++++++++++++++++++++++++++++
-    export class Ocean extends objects.GameObject {
+    export class Sky extends objects.GameObject {
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
         
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
         constructor() {
-            super("ocean");
+            super("mountain");
             
-           this._speed.x = 5; //ocean speed
+           this._speed.x = 5; //sky speed
            this._reset(0);
         }
         
         // PRIVATE METHODS ++++++++++++++++++++++++++++
         protected _checkBounds(value:number):void {
-            // check to see if the top of the ocean 
+            // check to see if the top of the sky 
             // is met the top of the scene
             
             console.log(this.x);
             if(this.x >= value) {
-                this._reset(-1160);
+                this._reset(-1200);
             }
         }
         
-        // reset the ocean offscreen
+        // reset the sky offscreen
         protected _reset(value:number):void {
             this.x = value;
         }
@@ -30,7 +30,7 @@ module objects {
         
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
         public update():void {
-            // scroll the ocean 5 px per frame
+            // scroll the sky 5 px per frame
             this.x += this._speed.x;
             this._checkBounds(0);
         }

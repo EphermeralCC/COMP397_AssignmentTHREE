@@ -6,37 +6,37 @@ var __extends = (this && this.__extends) || function (d, b) {
 var objects;
 (function (objects) {
     // OCEAN CLASS ++++++++++++++++++++++++++++++++++++
-    var Ocean = (function (_super) {
-        __extends(Ocean, _super);
+    var Sky = (function (_super) {
+        __extends(Sky, _super);
         // PRIVATE INSTANCE VARIABLES +++++++++++++++++
         // CONSTRUCTOR METHOD +++++++++++++++++++++++++
-        function Ocean() {
-            _super.call(this, "ocean");
+        function Sky() {
+            _super.call(this, "mountain");
             this._speed.x = 5; //ocean speed
             this._reset(0);
         }
         // PRIVATE METHODS ++++++++++++++++++++++++++++
-        Ocean.prototype._checkBounds = function (value) {
+        Sky.prototype._checkBounds = function (value) {
             // check to see if the top of the ocean 
             // is met the top of the scene
             console.log(this.x);
             if (this.x >= value) {
-                this._reset(-1160);
+                this._reset(-1200);
             }
         };
         // reset the ocean offscreen
-        Ocean.prototype._reset = function (value) {
+        Sky.prototype._reset = function (value) {
             this.x = value;
         };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
-        Ocean.prototype.update = function () {
+        Sky.prototype.update = function () {
             // scroll the ocean 5 px per frame
             this.x += this._speed.x;
             this._checkBounds(0);
         };
-        return Ocean;
+        return Sky;
     }(objects.GameObject));
-    objects.Ocean = Ocean;
+    objects.Sky = Sky;
 })(objects || (objects = {}));
 
-//# sourceMappingURL=ocean.js.map
+//# sourceMappingURL=sky.js.map
