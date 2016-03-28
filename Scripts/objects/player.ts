@@ -1,3 +1,13 @@
+/*
+Author: Christine Cho
+Last Modified by: Christine Cho
+Last Modified: 03/22/2016
+File description: Manages the player location
+
+Revision:
+1. Changed the location to of the player to the right of the screen
+*/
+
 module objects {
     // PLAYER CLASS ++++++++++++++++++++++++++++++
     export class Player extends createjs.Bitmap {

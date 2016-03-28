@@ -19,7 +19,7 @@ var objects;
         Sky.prototype._checkBounds = function (value) {
             // check to see if the top of the sky 
             // is met the top of the scene
-            console.log(this.x);
+            //console.log(this.x);
             if (this.x >= value) {
                 this._reset(-1200);
             }

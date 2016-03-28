@@ -1,3 +1,12 @@
+/*
+Author: Christine Cho
+Last Modified by: Christine Cho
+Last Modified: 03/22/2016
+File description: Manages assets and scene changes
+
+Revision:
+1. Added the Instructions and more images
+*/
 /// <reference path = "_reference.ts" />
 // global variables
 var assets;

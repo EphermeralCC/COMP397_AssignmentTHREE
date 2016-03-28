@@ -1,3 +1,13 @@
+/*
+Author: Christine Cho
+Last Modified by: Christine Cho
+Last Modified: 03/28/2016
+File description: Manages collisions in the game
+
+Revision:
+1. Changed collision to add score
+*/
+
 module managers {
     // COLLISION MANAGER CLASS
     export class Collision {
@@ -32,11 +42,13 @@ module managers {
                 // check if it's an island hit
                 if(object.name === "fire") {
                     console.log("fire collected!");
+                    play.score ++;
+                    //console.log(play.score);
                 }
                 
                 // check if it's a cloud hit
                 if(object.name === "fireball") {
-                    console.log("fireball hit!");
+                    //console.log("fireball hit!");
                 }
             }
         }
