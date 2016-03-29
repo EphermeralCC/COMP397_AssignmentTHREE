@@ -1,8 +1,19 @@
-// LEFT_CAVE SCENE
+/*
+Author: Christine Cho
+Last Modified by: Christine Cho
+Last Modified: 03/28/2016
+File description: Manages the gameover scene
+
+Revision:
+1. Added gameover label and background
+*/
+
+// END SCENE
 module scenes {
     export class End extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        private _endLabel: objects.Label;
+        private _gameoverImage: createjs.Bitmap;
+        
         private _restartButton: objects.Button;
         
         // CONSTRUCTOR ++++++++++++++++++++++
@@ -15,19 +26,16 @@ module scenes {
         
         // Start Method
         public start(): void {
-            //Add Menu Label
-            this._endLabel = new objects.Label(
-                "END SCENE", "60px Consolas",
-                "#000000",
-                config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
-            this.addChild(this._endLabel);
+            //Add Gameover Image
+            this._gameoverImage = new createjs.Bitmap(assets.getResult("gameover"));
+            this.addChild(this._gameoverImage);
             
-            // add the BACK button to the OVER scene
+            // add the _restartButton to the MENU scene
             this._restartButton = new objects.Button(
                 "RestartButton",
                 config.Screen.CENTER_X,
-                config.Screen.CENTER_Y + 180, true);
-            this.addChild(this._restartButton);
+                config.Screen.CENTER_Y + 35, true);
+            this.addChild(this._restartButton); 
            
             // START_OVER Button event listener
             this._restartButton.on("click", this._restartButtonClick, this);

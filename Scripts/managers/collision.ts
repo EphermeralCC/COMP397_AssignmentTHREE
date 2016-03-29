@@ -48,6 +48,7 @@ module managers {
                 
                 // check if it's a cloud hit
                 if(object.name === "fireball") {
+                    play.lives--;
                     //console.log("fireball hit!");
                 }
             }

@@ -7,6 +7,7 @@ File description: Manages the play scene
 Revision:
 1. Added score and lives label
 2. Added score counter based on collision
+3. Added live checker to transition to gameover
 */
 
 // PLAY SCENE
@@ -25,6 +26,7 @@ module scenes {
         private _scoreText: objects.Label;
         
         public lives: number;
+        private _livesWord: objects.Label;
         private _livesText: objects.Label;
         
         // CONSTRUCTOR ++++++++++++++++++++++
@@ -38,7 +40,7 @@ module scenes {
         // Start Method
         public start(): void {
             this.score = 0;
-            this.lives = 5;
+            this.lives = 100;
             
             // Set _fireballCount Count
             this._fireballCount = 8;
@@ -70,12 +72,20 @@ module scenes {
             // add this scene to the global stage container
             stage.addChild(this);
             
+            //Add _scoreText to the scene
+            this._livesWord = new objects.Label("LIVES: ",
+                "bold 25px Britannic Bold",
+                "#0434C4",
+                15, 15, false);
+            //this._livesText.textAlign = "right";
+            this.addChild(this._livesWord);
+            
             //Add _livesText to the scene
             this._livesText = new objects.Label("LIVES: " +
                 this.lives.toString(),
                 "bold 25px Britannic Bold",
                 "#0434C4",
-                25, 15, false);
+                100, 15, false);
             //this._livesText.textAlign = "right";
             this.addChild(this._livesText);
             
@@ -111,11 +121,22 @@ module scenes {
 
             this._collision.check(this._fire);
             this._scoreText.text = this.score.toString();
+            this._livesText.text = this.lives.toString();
+            this._checkLives();
             
         }
         
+        //PRIVATE METHODS
+        private _checkLives(): void{
+            if(this.lives <= 0){
+                scene = config.Scene.END;
+                changeScene();
+            }
+        }
         
         //EVENT HANDLERS ++++++++++++++++++++
+        
+        
         
     }
 }

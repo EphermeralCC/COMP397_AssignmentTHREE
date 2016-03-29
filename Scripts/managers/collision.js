@@ -37,6 +37,7 @@ var managers;
                 }
                 // check if it's a cloud hit
                 if (object.name === "fireball") {
+                    play.lives--;
                 }
             }
         };

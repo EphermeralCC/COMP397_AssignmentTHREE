@@ -1,9 +1,18 @@
+/*
+Author: Christine Cho
+Last Modified by: Christine Cho
+Last Modified: 03/28/2016
+File description: Manages the gameover scene
+
+Revision:
+1. Added gameover label and background
+*/
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-// LEFT_CAVE SCENE
+// END SCENE
 var scenes;
 (function (scenes) {
     var End = (function (_super) {
@@ -15,11 +24,11 @@ var scenes;
         // PUBLIC METHODS ++++++++++++++++++++
         // Start Method
         End.prototype.start = function () {
-            //Add Menu Label
-            this._endLabel = new objects.Label("END SCENE", "60px Consolas", "#000000", config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
-            this.addChild(this._endLabel);
-            // add the BACK button to the OVER scene
-            this._restartButton = new objects.Button("RestartButton", config.Screen.CENTER_X, config.Screen.CENTER_Y + 180, true);
+            //Add Gameover Image
+            this._gameoverImage = new createjs.Bitmap(assets.getResult("gameover"));
+            this.addChild(this._gameoverImage);
+            // add the _restartButton to the MENU scene
+            this._restartButton = new objects.Button("RestartButton", config.Screen.CENTER_X, config.Screen.CENTER_Y + 35, true);
             this.addChild(this._restartButton);
             // START_OVER Button event listener
             this._restartButton.on("click", this._restartButtonClick, this);

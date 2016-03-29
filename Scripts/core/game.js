@@ -1,11 +1,12 @@
 /*
 Author: Christine Cho
 Last Modified by: Christine Cho
-Last Modified: 03/22/2016
+Last Modified: 03/28/2016
 File description: Manages assets and scene changes
 
 Revision:
 1. Added the Instructions and more images
+2. Added Gameover image
 */
 /// <reference path = "_reference.ts" />
 // global variables
@@ -31,6 +32,7 @@ var assetData = [
     { id: "fire", src: "../../Assets/images/fire.png" },
     { id: "fireball", src: "../../Assets/images/fireball.png" },
     { id: "background", src: "../../Assets/images/background.png" },
+    { id: "gameover", src: "../../Assets/images/gameover.png" },
     { id: "instruction", src: "../../Assets/images/instruction.png" }
 ];
 function preload() {
