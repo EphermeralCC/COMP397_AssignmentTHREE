@@ -60,13 +60,13 @@ var scenes;
             //this._livesText.textAlign = "right";
             this.addChild(this._livesText);
             //Add _scoreText to the scene
-            this._scoreWord = new objects.Label("SCORE: ", "bold 25px Britannic Bold", "#0434C4", 500, 15, false);
+            this.scoreWord = new objects.Label("SCORE: ", "bold 25px Britannic Bold", "#0434C4", 500, 15, false);
             //this._livesText.textAlign = "right";
-            this.addChild(this._scoreWord);
-            this._scoreText = new objects.Label("SCORE: " +
+            this.addChild(this.scoreWord);
+            this.scoreText = new objects.Label("SCORE: " +
                 this.score.toString(), "bold 25px Britannic Bold", "#0434C4", 600, 15, false);
             //this._livesText.textAlign = "right";
-            this.addChild(this._scoreText);
+            this.addChild(this.scoreText);
         };
         // PLAY Scene updates here
         Play.prototype.update = function () {
@@ -79,7 +79,7 @@ var scenes;
                 _this._collision.check(ball);
             });
             this._collision.check(this._fire);
-            this._scoreText.text = this.score.toString();
+            this.scoreText.text = this.score.toString();
             this._livesText.text = this.lives.toString();
             this._checkLives();
         };

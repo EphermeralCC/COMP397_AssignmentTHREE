@@ -13,6 +13,12 @@ Revision:
 // PLAY SCENE
 module scenes {
     export class Play extends objects.Scene {
+
+        public score: number;
+        public scoreWord: objects.Label;
+        public scoreText: objects.Label;
+        public lives: number;
+        
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _sky: objects.Sky;
         private _fire: objects.Fire;
@@ -21,11 +27,6 @@ module scenes {
         private _player: objects.Player;
         private _collision: managers.Collision;
 
-        public score: number;
-        private _scoreWord: objects.Label;
-        private _scoreText: objects.Label;
-        
-        public lives: number;
         private _livesWord: objects.Label;
         private _livesText: objects.Label;
         
@@ -90,21 +91,21 @@ module scenes {
             this.addChild(this._livesText);
             
             //Add _scoreText to the scene
-            this._scoreWord = new objects.Label("SCORE: ",
+            this.scoreWord = new objects.Label("SCORE: ",
                 "bold 25px Britannic Bold",
                 "#0434C4",
                 500, 15, false);
             //this._livesText.textAlign = "right";
-            this.addChild(this._scoreWord);
-            
-            this._scoreText = new objects.Label("SCORE: " +
+            this.addChild(this.scoreWord);
+
+            this.scoreText = new objects.Label("SCORE: " +
                 this.score.toString(),
                 "bold 25px Britannic Bold",
                 "#0434C4",
                 600, 15, false);
             //this._livesText.textAlign = "right";
-            this.addChild(this._scoreText);
-            
+            this.addChild(this.scoreText);
+
         }
 
         // PLAY Scene updates here
@@ -120,15 +121,15 @@ module scenes {
             });
 
             this._collision.check(this._fire);
-            this._scoreText.text = this.score.toString();
+            this.scoreText.text = this.score.toString();
             this._livesText.text = this.lives.toString();
             this._checkLives();
-            
+
         }
         
         //PRIVATE METHODS
-        private _checkLives(): void{
-            if(this.lives <= 0){
+        private _checkLives(): void {
+            if (this.lives <= 0) {
                 scene = config.Scene.END;
                 changeScene();
             }
