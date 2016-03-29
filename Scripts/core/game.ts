@@ -6,7 +6,8 @@ File description: Manages assets and scene changes
 
 Revision:
 1. Added the Instructions and more images
-2. Added Gameover image
+2. Added Gameover image and hit/collect sounds
+3. Added sounds to the scenes
 */
 
 /// <reference path = "_reference.ts" />
@@ -38,7 +39,12 @@ var assetData: objects.Asset[] = [
     { id: "fireball", src: "../../Assets/images/fireball.png" },
     { id: "background", src: "../../Assets/images/background.png" },
     { id: "gameover", src: "../../Assets/images/gameover.png" },
-    { id: "instruction", src: "../../Assets/images/instruction.png" }
+    { id: "instruction", src: "../../Assets/images/instruction.png" },
+    { id: "hit", src: "../../Assets/audio/hit.mp3" },
+    { id: "collect", src: "../../Assets/audio/collect.mp3" },
+    { id: "gameovermusic", src: "../../Assets/audio/gameover.mp3" },
+    { id: "menumusic", src: "../../Assets/audio/opening.mp3" },
+    { id: "backgroundmusic", src: "../../Assets/audio/background.mp3" }
 ];
 
 function preload() {
@@ -107,6 +113,8 @@ function changeScene(): void {
             stage.removeAllChildren();
             menu = new scenes.Menu();
             currentScene = menu;
+            createjs.Sound.stop();
+            createjs.Sound.play("menumusic");
             console.log("Starting MENU Scene");
             break;
         case config.Scene.INSTRUCTION:
@@ -121,6 +129,8 @@ function changeScene(): void {
             stage.removeAllChildren();
             play = new scenes.Play();
             currentScene = play;
+            createjs.Sound.stop();
+            createjs.Sound.play("backgroundmusic");
             console.log("Starting PLAY Scene");
             break;
         case config.Scene.END:
@@ -128,6 +138,8 @@ function changeScene(): void {
             stage.removeAllChildren();
             end = new scenes.End();
             currentScene = end;
+            createjs.Sound.stop();
+            createjs.Sound.play("gameovermusic");
             console.log("Starting END Scene");
             break;
     }

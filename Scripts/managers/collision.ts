@@ -24,9 +24,9 @@ module managers {
         public check(object:objects.GameObject) {
             var startPoint:createjs.Point = new createjs.Point();
             var endPoint:createjs.Point = new createjs.Point();
-            var playerHalfHeight:number = this._player.height * 0.5;
-            var objectHalfHeight:number = object.height * 0.5;
-            var minimumDistance:number = playerHalfHeight + objectHalfHeight;
+            var playerHalfWidth:number = this._player.width * 0.5;
+            var objectHalfWidth:number = object.width * 0.5;
+            var minimumDistance:number = playerHalfWidth + objectHalfWidth;
             
             startPoint.x = this._player.x;
             startPoint.y = this._player.y;
@@ -39,17 +39,26 @@ module managers {
               the other object is less than the minimum distance */
             if(this.distance(startPoint, endPoint) < minimumDistance) {
                 
-                // check if it's an island hit
+                // check if it's fire hit
                 if(object.name === "fire") {
                     console.log("fire collected!");
                     play.score ++;
+                    //createjs.Sound.play("collect");
                     //console.log(play.score);
                 }
                 
-                // check if it's a cloud hit
+                // check if it's a fireball hit
                 if(object.name === "fireball") {
                     play.lives--;
+                    //createjs.Sound.play("hit");
                     //console.log("fireball hit!");
+                }
+                
+                if(object.name === "fireball" && startPoint.x == object.x || startPoint.y == object.x) {
+                    createjs.Sound.play("hit");
+                }
+                if(object.name === "fire" && startPoint.x == object.x || startPoint.y == object.y ) {
+                    createjs.Sound.play("collect");
                 }
             }
         }

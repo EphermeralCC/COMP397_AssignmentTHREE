@@ -20,7 +20,7 @@ var objects;
             // check to see if the top of the fireball 
             // is outside the viewport         
             if (this.x >= value) {
-                this._reset(this._leftBounds - 200);
+                this._reset(this._leftBounds - 100);
             }
         };
         // reset the fireball offscreen
@@ -35,7 +35,7 @@ var objects;
             // scroll the fireball down the screen
             this.x += this._speed.x;
             this.y += this._speed.y;
-            this._checkBounds(this._rightBounds + 200);
+            this._checkBounds(this._rightBounds + 100);
         };
         return Fireball;
     }(objects.GameObject));

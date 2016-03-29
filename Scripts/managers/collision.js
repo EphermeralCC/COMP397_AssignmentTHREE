@@ -20,9 +20,9 @@ var managers;
         Collision.prototype.check = function (object) {
             var startPoint = new createjs.Point();
             var endPoint = new createjs.Point();
-            var playerHalfHeight = this._player.height * 0.5;
-            var objectHalfHeight = object.height * 0.5;
-            var minimumDistance = playerHalfHeight + objectHalfHeight;
+            var playerHalfWidth = this._player.width * 0.5;
+            var objectHalfWidth = object.width * 0.5;
+            var minimumDistance = playerHalfWidth + objectHalfWidth;
             startPoint.x = this._player.x;
             startPoint.y = this._player.y;
             endPoint.x = object.centerX + object.x;
@@ -30,14 +30,20 @@ var managers;
             /* check if the distance between the player and
               the other object is less than the minimum distance */
             if (this.distance(startPoint, endPoint) < minimumDistance) {
-                // check if it's an island hit
+                // check if it's fire hit
                 if (object.name === "fire") {
                     console.log("fire collected!");
                     play.score++;
                 }
-                // check if it's a cloud hit
+                // check if it's a fireball hit
                 if (object.name === "fireball") {
                     play.lives--;
+                }
+                if (object.name === "fireball" && startPoint.x == object.x || startPoint.y == object.x) {
+                    createjs.Sound.play("hit");
+                }
+                if (object.name === "fire" && startPoint.x == object.x || startPoint.y == object.y) {
+                    createjs.Sound.play("collect");
                 }
             }
         };
