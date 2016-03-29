@@ -38,7 +38,7 @@ module scenes {
                 "bold 25px Britannic Bold",
                 "#FF0000",
                 config.Screen.CENTER_X,
-                config.Screen.CENTER_Y + 35, true);
+                config.Screen.CENTER_Y + 30, true);
             //this._livesText.textAlign = "right";
             this.addChild(this.scoreWord);
 

@@ -29,7 +29,7 @@ var scenes;
             this.addChild(this._gameoverImage);
             //add the final score label
             //Add _scoreText to the scene
-            this.scoreWord = new objects.Label("HIGHSCORE: " + play.scoreText.text, "bold 25px Britannic Bold", "#FF0000", config.Screen.CENTER_X, config.Screen.CENTER_Y + 35, true);
+            this.scoreWord = new objects.Label("HIGHSCORE: " + play.scoreText.text, "bold 25px Britannic Bold", "#FF0000", config.Screen.CENTER_X, config.Screen.CENTER_Y + 30, true);
             //this._livesText.textAlign = "right";
             this.addChild(this.scoreWord);
             play.scoreText.text;
