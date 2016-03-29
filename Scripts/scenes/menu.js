@@ -1,3 +1,12 @@
+/*
+Author: Christine Cho
+Last Modified by: Christine Cho
+Last Modified: 03/28/2016
+File description: Manages the Menu scene in the game
+
+Revision:
+1. Added instruction button to the scene
+*/
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -48,8 +57,7 @@ var scenes;
             changeScene();
         };
         return Menu;
-    }(objects.Scene));
+    })(objects.Scene);
     scenes.Menu = Menu;
 })(scenes || (scenes = {}));
-
 //# sourceMappingURL=menu.js.map

@@ -36,8 +36,7 @@ var objects;
             this._checkBounds(this._rightBounds + 100);
         };
         return Fire;
-    }(objects.GameObject));
+    })(objects.GameObject);
     objects.Fire = Fire;
 })(objects || (objects = {}));
-
 //# sourceMappingURL=fire.js.map

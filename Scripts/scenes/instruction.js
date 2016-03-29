@@ -1,3 +1,12 @@
+/*
+Author: Christine Cho
+Last Modified by: Christine Cho
+Last Modified: 03/28/2016
+File description: Manages Instruction scene in the game
+
+Revision:
+1. Added instruction labels and buttons
+*/
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -37,8 +46,7 @@ var scenes;
             changeScene();
         };
         return Instruction;
-    }(objects.Scene));
+    })(objects.Scene);
     scenes.Instruction = Instruction;
 })(scenes || (scenes = {}));
-
 //# sourceMappingURL=instruction.js.map

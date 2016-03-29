@@ -126,5 +126,4 @@ function changeScene() {
     console.log(currentScene.numChildren);
 }
 window.onload = preload;
-
 //# sourceMappingURL=game.js.map

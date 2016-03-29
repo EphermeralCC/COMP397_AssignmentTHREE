@@ -43,21 +43,17 @@ module managers {
                 if(object.name === "fire") {
                     console.log("fire collected!");
                     play.score ++;
-                    //createjs.Sound.play("collect");
-                    //console.log(play.score);
                 }
                 
                 // check if it's a fireball hit
                 if(object.name === "fireball") {
                     play.lives--;
-                    //createjs.Sound.play("hit");
-                    //console.log("fireball hit!");
                 }
                 
                 if(object.name === "fireball" && startPoint.x == object.x || startPoint.y == object.x) {
                     createjs.Sound.play("hit");
                 }
-                if(object.name === "fire" && startPoint.x == object.x || startPoint.y == object.y ) {
+                if(object.name === "fire" && startPoint.x == object.x || startPoint.y == object.y) {
                     createjs.Sound.play("collect");
                 }
             }

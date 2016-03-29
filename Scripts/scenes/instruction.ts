@@ -1,3 +1,13 @@
+/*
+Author: Christine Cho
+Last Modified by: Christine Cho
+Last Modified: 03/28/2016
+File description: Manages Instruction scene in the game
+
+Revision:
+1. Added instruction labels and buttons
+*/
+
 // INSTRUCTION SCENE
 module scenes {
     export class Instruction extends objects.Scene {

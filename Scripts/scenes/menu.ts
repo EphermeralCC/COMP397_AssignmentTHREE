@@ -1,4 +1,14 @@
-﻿// MENU SCENE
+﻿/*
+Author: Christine Cho
+Last Modified by: Christine Cho
+Last Modified: 03/28/2016
+File description: Manages the Menu scene in the game
+
+Revision:
+1. Added instruction button to the scene
+*/
+
+// MENU SCENE
 module scenes {
     export class Menu extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++

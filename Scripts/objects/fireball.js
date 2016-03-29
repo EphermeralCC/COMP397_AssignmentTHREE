@@ -38,8 +38,7 @@ var objects;
             this._checkBounds(this._rightBounds + 100);
         };
         return Fireball;
-    }(objects.GameObject));
+    })(objects.GameObject);
     objects.Fireball = Fireball;
 })(objects || (objects = {}));
-
 //# sourceMappingURL=fireball.js.map
