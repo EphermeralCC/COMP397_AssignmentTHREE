@@ -33,6 +33,10 @@ var objects;
         GameObject.prototype._reset = function (value) {
             this.y = value;
         };
+        // Reset the Object
+        GameObject.prototype.reset = function () {
+            this._reset(0);
+        };
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
         GameObject.prototype.update = function () {
             var boundValue = 0;
@@ -41,7 +45,8 @@ var objects;
             this._checkBounds(boundValue);
         };
         return GameObject;
-    })(createjs.Bitmap);
+    }(createjs.Bitmap));
     objects.GameObject = GameObject;
 })(objects || (objects = {}));
+
 //# sourceMappingURL=gameobject.js.map

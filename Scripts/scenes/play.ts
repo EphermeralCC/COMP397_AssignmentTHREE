@@ -41,7 +41,7 @@ module scenes {
         // Start Method
         public start(): void {
             this.score = 0;
-            this.lives = 100;
+            this.lives = 10;
             
             // Set _fireballCount Count
             this._fireballCount = 8;

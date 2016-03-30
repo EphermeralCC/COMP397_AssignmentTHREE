@@ -42,18 +42,15 @@ module managers {
                 // check if it's fire hit
                 if(object.name === "fire") {
                     console.log("fire collected!");
+                    object.reset();
                     play.score ++;
+                    createjs.Sound.play("hit");
                 }
                 
                 // check if it's a fireball hit
                 if(object.name === "fireball") {
+                    object.reset();
                     play.lives--;
-                }
-                
-                if(object.name === "fireball" && startPoint.x == object.x || startPoint.y == object.x) {
-                    createjs.Sound.play("hit");
-                }
-                if(object.name === "fire" && startPoint.x == object.x || startPoint.y == object.y) {
                     createjs.Sound.play("collect");
                 }
             }

@@ -27,7 +27,7 @@ var scenes;
         // Start Method
         Play.prototype.start = function () {
             this.score = 0;
-            this.lives = 100;
+            this.lives = 10;
             // Set _fireballCount Count
             this._fireballCount = 8;
             // Instantiate _fireball array
@@ -91,7 +91,8 @@ var scenes;
             }
         };
         return Play;
-    })(objects.Scene);
+    }(objects.Scene));
     scenes.Play = Play;
 })(scenes || (scenes = {}));
+
 //# sourceMappingURL=play.js.map

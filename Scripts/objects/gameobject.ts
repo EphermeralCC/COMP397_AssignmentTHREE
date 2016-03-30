@@ -44,6 +44,10 @@ module objects {
             this.y = value;
         }
         
+        // Reset the Object
+        public reset():void {
+            this._reset(0);
+        }
         
         // PUBLIC METHODS ++++++++++++++++++++++++++++++
         public update():void {

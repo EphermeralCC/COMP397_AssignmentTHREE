@@ -46,7 +46,8 @@ var scenes;
             changeScene();
         };
         return Instruction;
-    })(objects.Scene);
+    }(objects.Scene));
     scenes.Instruction = Instruction;
 })(scenes || (scenes = {}));
+
 //# sourceMappingURL=instruction.js.map

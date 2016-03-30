@@ -35,7 +35,8 @@ var objects;
             this._checkBounds(0);
         };
         return Sky;
-    })(objects.GameObject);
+    }(objects.GameObject));
     objects.Sky = Sky;
 })(objects || (objects = {}));
+
 //# sourceMappingURL=sky.js.map

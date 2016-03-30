@@ -1,0 +1,2 @@
+GitHub URL: https://github.com/EphermeralCC/COMP397_AssignmentTHREE
+Azure URL: http://comp397-assignment3.azurewebsites.net
